@@ -2,7 +2,8 @@
 #include <unistd.h>
 /**
  * main - Entry point into the program that prints a standard error in UNIX
- * return: 0 (Success)
+ * Description: this program prints a UNIX error
+ * Return: 1 (Success)
  */
 int main(void)
 {
