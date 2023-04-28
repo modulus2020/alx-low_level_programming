@@ -18,7 +18,8 @@ list_t *add_node(list_t **head, const char *str)
 
 	vew->str = strdup(str);
 
-	for (nchar = 0; str[nchar]; nchar++);
+	for (nchar = 0; str[nchar]; nchar++)
+		;
 
 	vew->len = nchar;
 	vew->next = *head;
