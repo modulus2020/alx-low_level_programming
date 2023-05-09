@@ -1,16 +1,16 @@
 #include "main.h"
-
+#include <stddef.h>
 /**
- * read_textfile - a text file and prints the letters
+ * read_textfile - reads a text file and prints the letters
  * @filename: filename.
  * @letters: numbers of letters printed.
  *
- * Return: letters printed. It fails, returns 0.
+ * Return: numbers of letters printed. It fails, returns 0.
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fid;
-	ssize_t newread, newryt;
+	ssize_t newrd, nwryt;
 	char *buffa;
 
 	if (!filename)
@@ -25,12 +25,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (!buffa)
 		return (0);
 
-	newread = read(fid, buffa, letters);
-	newryt = write(STDOUT_FILENO, buffa, newread);
+	newrd = read(fid, buffa, letters);
+	nwryt = write(STDOUT_FILENO, buffa, newrd);
 
 	close(fid);
 
 	free(buffa);
 
-	return (newread);
+	return (nwryt);
 }
